@@ -1,7 +1,7 @@
 {
-  "name": "__BONES_NEEDS_A_NAME__",
+  "name": "pwakedex",
   "version": "0.0.1",
-  "description": "A happy little skeleton.",
+  "description": "progressive web app pokedex built with react and redux",
   "main": "index.js",
   "scripts": {
     "test": "check-node-version --node '>= 6.7.0' && bin/setup && mocha --compilers js:babel-register app/**/*.test.js app/**/*.test.jsx db/**/*.test.js server/**/*.test.js",
@@ -13,23 +13,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/queerviolet/bones.git"
+    "url": ""
   },
   "keywords": [
     "react",
     "redux",
-    "skeleton"
+    "pokedex",
+    "progressive",
+    "pwa"
   ],
-  "author": "Ashi Krishnan <me@ashi.works>",
+  "author": "C.S. Jiang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/queerviolet/bones/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/queerviolet/bones#readme",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.15.2",
     "babel-preset-stage-2": "^6.18.0",
-    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "chai-enzyme": "^0.5.2",
     "chalk": "^1.1.3",
@@ -38,11 +39,6 @@
     "enzyme": "^2.5.1",
     "express": "^4.14.0",
     "nodemon": "^1.11.0",
-    "passport": "^0.3.2",
-    "passport-facebook": "^2.1.1",
-    "passport-github2": "^0.1.10",
-    "passport-google-oauth": "^1.0.0",
-    "passport-local": "^1.0.0",
     "pg": "^6.1.0",
     "pg-native": "^1.10.0",
     "pretty-error": "^2.0.2",
