@@ -66,6 +66,7 @@
     "mocha": "^3.1.2",
     "supertest": "^2.0.1",
     "supertest-as-promised": "^4.0.1",
+    "sw-precache-webpack-plugin": "^0.7.2",
     "volleyball": "^1.4.1",
     "webpack": "^1.13.3"
   }

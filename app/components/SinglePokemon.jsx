@@ -30,7 +30,7 @@ const PokeCard = ({ selectedPokemon }) => {
             subtitle={selectedPokemon.description}
           />}
       >
-        <img src={selectedPokemon.front_shiny_sprite_male} />
+        <img src={`/pokeImages/${selectedPokemon.name}.png` || selectedPokemon.front_shiny_sprite_male} />
       </CardMedia>
       <CardActions>
         <FlatButton label="View Stats" />

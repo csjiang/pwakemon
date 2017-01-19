@@ -1,7 +1,7 @@
 import axios from 'axios'
-
+import pokeData from '../../public/pokeData'
 const defaultState = {
-  allPokemon: [],
+  allPokemon: pokeData,
   selectedPokemon: {},
 }
 

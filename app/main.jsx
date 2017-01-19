@@ -30,7 +30,25 @@ const NavWrapper = connect(
 
 const onPokemonEnter = () => (!store.getState().pokemon.length && store.dispatch(getAllPokemon()))
 
-// const onSinglePokemonEnter = nextRouterState => (!store.getState().selectedPokemon && store.dispatch(getOnePokemonById(nextRouterState.params.id)))
+
+/*Service worker stuff start*/
+
+// Register the service worker if available.
+const registerSW = filename => {
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(filename)
+      .then(function(reg) {
+          console.log('Successfully registered service worker', reg);
+      }).catch(function(err) {
+          console.warn('Error while registering service worker', err);
+      });
+  }
+}
+
+registerSW('sw.js')
+// registerSW('/webpack-built-sw.js')
+
+/* Service worker stuff finished*/
 
 render (
   <Provider store={store}>

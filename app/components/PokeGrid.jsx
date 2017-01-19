@@ -56,7 +56,7 @@ const PokeGrid = ({ allPokemon, getOnePokemon }) => (
               borderRadius: '5%'
             }}
           >
-          <img src={p.front_shiny_sprite_male} />
+          <img src={`/pokeImages/${p.name}.png` || p.front_shiny_sprite_male} />
           </GridTile>
         </Link>
       ))}
