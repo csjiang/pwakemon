@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  auth: require('./auth').default,  
+  pokemon: require('./pokemon').default,  
 })
 
 export default rootReducer

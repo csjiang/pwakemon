@@ -3,7 +3,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const {resolve} = require('path')
-const passport = require('passport')
 const PrettyError = require('pretty-error')
 
 
@@ -40,10 +39,6 @@ module.exports = app
   // Body parsing middleware
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
-
-  // Authentication middleware
-  .use(passport.initialize())
-  .use(passport.session())
   
   // Serve static files from ../public
   .use(express.static(resolve(__dirname, '..', 'public')))
