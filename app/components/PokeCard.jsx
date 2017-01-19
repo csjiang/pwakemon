@@ -20,4 +20,8 @@ const PokeCard = ({ pokemon }) => (
   </Card>
 );
 
-export default PokeCard;
+import {connect} from 'react-redux'
+
+export default connect (
+  (state, ownProps) => ({ selectedPokemon: state.pokemon.selectedPokemon }),{getOnePokemon},
+) (Pokemon)

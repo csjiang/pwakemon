@@ -32,17 +32,19 @@ export default class DexDrawer extends Component  {
               open={this.state.open}
               onRequestChange={(open) => this.setState({open})}
               >
-              <AppBar title="Pwakédex" 
+              <AppBar title="Menu" 
               iconElementLeft={<PokeIcon />}/>
 
               <MenuItem onTouchTap={this.handleClose}>All Pokémon
               </MenuItem>
               <MenuItem onTouchTap={this.handleClose}>My Teams
+              </MenuItem>              
+              <MenuItem onTouchTap={this.handleClose}>Favorites
               </MenuItem>
               <MenuItem onTouchTap={this.handleClose}>About
               </MenuItem>
             </Drawer>
-            <AppBar style={{position: 'fixed'}} title="App Bar Example"
+            <AppBar style={{position: 'fixed'}} title="Pwakédex: A Progressive Web App Pokédex"
             onLeftIconButtonTouchTap={this.handleToggle}/>
           </div>
       );

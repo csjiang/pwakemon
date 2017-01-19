@@ -5,23 +5,19 @@ import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 
 import store from './store'
-import {getAllPokemon} from './reducers/pokemon'
+import {getAllPokemon, getOnePokemon, getOnePokemonById} from './reducers/pokemon'
 
 import DexContainer from './containers/DexContainer'
 import DexDrawer from './components/DexDrawer'
+import SinglePokemon from './components/SinglePokemon'
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
-
 // Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
-
-// import Login from './components/Login'
-// import WhoAmI from './components/WhoAmI'
 
 const NavWrapper = connect( 
   () => ({})) (
@@ -34,12 +30,15 @@ const NavWrapper = connect(
 
 const onPokemonEnter = () => (!store.getState().pokemon.length && store.dispatch(getAllPokemon()))
 
+// const onSinglePokemonEnter = nextRouterState => (!store.getState().selectedPokemon && store.dispatch(getOnePokemonById(nextRouterState.params.id)))
+
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={NavWrapper} >
         <IndexRedirect to="/pokemon" />
         <Route path="/pokemon" component={DexContainer} onEnter={onPokemonEnter} />
+        <Route path='/pokemon/:id' component={SinglePokemon} />
       </Route>
     </Router>
   </Provider>,

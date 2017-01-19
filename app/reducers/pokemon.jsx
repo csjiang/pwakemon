@@ -37,6 +37,14 @@ export const getOnePokemon = p =>
         dispatch(receiveOnePokemon(p))
       })
 
+export const getOnePokemonById = pId =>
+  dispatch =>
+    axios.get(`/api/pokemon/${pId}`)
+      .then(response => {
+        const p = response.data
+        dispatch(receiveOnePokemon(p))
+      })
+
 export const getAllPokemon = () =>
   dispatch =>
     axios.get('/api/pokemon/')

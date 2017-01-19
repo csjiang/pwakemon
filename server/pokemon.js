@@ -5,10 +5,12 @@ const Pokemon = db.models.pokemon
 
 module.exports = require('express').Router()
 	.get('/', (req, res, next) => 
-		Pokemon.findAll()
-		.then(pokemon => res.json(pokemon))
+		Pokemon.findAll({
+			order: [['order', 'ASC']]
+		})
+		.then(pokemon => res.status(200).json(pokemon))
 		.catch(next))
 	.get('/:id', (req, res, next) => 
 		Pokemon.findById(req.params.id)
-		.then(p => res.json(p))
+		.then(p => res.status(200).json(p))
 		.catch(next))
